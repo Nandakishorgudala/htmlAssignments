@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>India Map - Clickable States</title>
+  <style>
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+
+<h2>Click a state</h2>
+<h2>India Map (Click a State  (Madhyapradesh or Telangana or andhrapradesh))</h2>
+
+  <img src="images/india-map.jpeg" alt="India Map" usemap="#scenemap">
+
+  <map name="scenemap">
+    <!-- Madhya Pradesh -->
+     <area shape="circle" coords="113,100,15" title="Circle" href="./madhyapradesh.html">
+    <!-- Telangana -->
+     <area shape="circle" coords="114,130,15" 
+     alt="Telangana"
+      title="Telangana"
+      href="telangana.html">
+
+    <!-- Andhra Pradesh -->
+     <area shape="poly" coords="115,144,121,144,122,133,132,128,140,117,119,124,130,117,107,129,104,138,106,144"title="Andhra Pradesh"
+      href="andhrapradesh.html">
+  </map>
+
+
+</body>
+</html>

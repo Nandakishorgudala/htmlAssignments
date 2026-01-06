@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics of Html</title>
+
+  <!-- Correct relative path -->
+  <link rel="stylesheet" href="./scripts/style.css" />
+</head>
+
+<body>
+
+ 
+
+ 
+
+ 
+<img src="./images/img1.jpeg" width="500" height="600">
+
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+
+<!-- browser automatically removes extra space -->
+<p>
+This paragraph
+contains a lot of lines
+in the source code,
+but the browser
+ignores it.
+</p>
+
+<p>
+This paragraph
+contains         a lot of spaces
+in the source         code,
+but the        browser
+ignores it.
+</p>
+
+
+<!-- Horizontal Rule  -->
+<h1>This is heading 1</h1>
+<p>This is some text.</p>
+<hr>
+<h2>This is heading 2</h2>
+<p>This is some other text.</p>
+<hr>
+
+
+<!-- break  -->
+<p>This is<br>a paragraph<br>with line breaks.</p>
+
+
+<!-- pre element for pre formatted text  -->
+
+<pre>
+  My Bonnie lies over the ocean.
+
+  My Bonnie lies over the sea.
+
+  My Bonnie lies over the ocean.
+
+  Oh, bring back my Bonnie to me.
+</pre>
+
+
+<!--bold  -->
+<b>This text is bold</b>
+
+
+<!--strong  -->
+<strong>This text is important!</strong>
+
+
+<!--italic  -->
+<i>This text is italic</i>
+
+<em>This text is emphasized</em>
+
+<small>This is some smaller text.</small>
+
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+
+<p>My favorite color is <del>blue</del> red.</p>
+
+<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+
+<p>This is <sub>subscripted</sub> text.</p>
+
+<p>This is <sup>superscripted</sup> text.</p>
+
+<a ></a>
+<a href="https://www.google.com" target="_blank">Click me </a>
+
+
+<h2>My Video</h2>
+
+  <video width="600" controls>
+    <source src="./videos/vid1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  
+<h2>Click a state</h2>
+<h2>India Map (Click a State  (Madhyapradesh or Telangana or andhrapradesh))</h2>
+
+  <img src="./images/india-map.jpeg" alt="India Map" usemap="#scenemap">
+
+  <map name="scenemap">
+    <!-- Madhya Pradesh -->
+     <area shape="circle" coords="113,100,15" title="Circle" href="./madhyapradesh.html">
+    <!-- Telangana -->
+     <area shape="circle" coords="114,130,15" 
+     alt="Telangana"
+      title="Telangana"
+      href="telangana.html">
+
+    <!-- Andhra Pradesh -->
+     <area shape="poly" coords="115,144,121,144,122,133,132,128,140,117,119,124,130,117,107,129,104,138,106,144"title="Andhra Pradesh"
+      href="andhrapradesh.html">
+  </map>
+
+
+<h2 style="text-align:center;">Student Marks Table</h2>
+
+<table border="1" style="border-collapse: collapse;">
+  <!-- Table Heading -->
+  <tr>
+    <th rowspan="2">Student Name</th>
+    <th colspan="3">Subjects</th>
+    <th rowspan="2">Total</th>
+  </tr>
+
+  <!-- Sub headings -->
+  <tr>
+    <th>Maths</th>
+    <th>Java</th>
+    <th>DBMS</th>
+  </tr>
+
+  <!-- Student 1 -->
+  <tr>
+    <td>Rahul</td>
+    <td>85</td>
+    <td>78</td>
+    <td>88</td>
+    <td>251</td>
+  </tr>
+
+  <!-- Student 2 -->
+  <tr>
+    <td>Anita</td>
+    <td>90</td>
+    <td>92</td>
+    <td>89</td>
+    <td>271</td>
+  </tr>
+
+  <!-- Student 3 -->
+  <tr>
+    <td>Vikram</td>
+    <td>75</td>
+    <td>80</td>
+    <td>70</td>
+    <td>225</td>
+  </tr>
+
+</table>
+
+  
+  <h2>Assignment Submission</h2>
+
+  <form action="#" method="post">
+    <!-- Name -->
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    </div>
+
+    <!-- Radio: Track -->
+    <div class="field">
+      <label>Track</label>
+      <div class="inline">
+        <label>
+          <input type="radio" name="track" value=".net" required />
+          .NET
+        </label>
+
+        <label>
+          <input type="radio" name="track" value="java" />
+          Java
+        </label>
+      </div>
+    </div>
+
+    <!-- Checkboxes: Dates 05-01-2026 to 10-01-2026 -->
+ <div class="field">
+  <label>Select Date</label>
+
+  <div class="dates">
+    <label><input type="radio" name="date" value="05-01-2026" required> 05-01-2026</label>
+    <label><input type="radio" name="date" value="06-01-2026"> 06-01-2026</label>
+    <label><input type="radio" name="date" value="07-01-2026"> 07-01-2026</label>
+    <label><input type="radio" name="date" value="08-01-2026"> 08-01-2026</label>
+    <label><input type="radio" name="date" value="09-01-2026"> 09-01-2026</label>
+    <label><input type="radio" name="date" value="10-01-2026"> 10-01-2026</label>
+  </div>
+</div>
+
+    <!-- Assignment Name -->
+    <div class="field">
+      <label for="assignment">Assignment Name</label>
+      <input type="text" id="assignment" name="assignment" placeholder="E.g., HTML Forms Task" required />
+    </div>
+
+    <!-- GitHub Link -->
+    <div class="field">
+      <label for="github">GitHub Link</label>
+      <input
+        type="url"
+        id="github"
+        name="github"
+        placeholder="https://github.com/username/repo"
+        required
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="field">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+
+
+
+
+
+
+</body>
+</html>

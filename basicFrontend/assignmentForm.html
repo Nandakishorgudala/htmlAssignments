@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Submission Form</title>
+</head>
+<body>
+
+  <h2>Assignment Submission</h2>
+
+  <form action="#" method="post">
+    <!-- Name -->
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    </div>
+
+    <!-- Radio: Track -->
+    <div class="field">
+      <label>Track</label>
+      <div class="inline">
+        <label>
+          <input type="radio" name="track" value=".net" required />
+          .NET
+        </label>
+
+        <label>
+          <input type="radio" name="track" value="java" />
+          Java
+        </label>
+      </div>
+    </div>
+
+    <!-- Checkboxes: Dates 05-01-2026 to 10-01-2026 -->
+ <div class="field">
+  <label>Select Date</label>
+
+  <div class="dates">
+    <label><input type="radio" name="date" value="05-01-2026" required> 05-01-2026</label>
+    <label><input type="radio" name="date" value="06-01-2026"> 06-01-2026</label>
+    <label><input type="radio" name="date" value="07-01-2026"> 07-01-2026</label>
+    <label><input type="radio" name="date" value="08-01-2026"> 08-01-2026</label>
+    <label><input type="radio" name="date" value="09-01-2026"> 09-01-2026</label>
+    <label><input type="radio" name="date" value="10-01-2026"> 10-01-2026</label>
+  </div>
+</div>
+
+    <!-- Assignment Name -->
+    <div class="field">
+      <label for="assignment">Assignment Name</label>
+      <input type="text" id="assignment" name="assignment" placeholder="E.g., HTML Forms Task" required />
+    </div>
+
+    <!-- GitHub Link -->
+    <div class="field">
+      <label for="github">GitHub Link</label>
+      <input
+        type="url"
+        id="github"
+        name="github"
+        placeholder="https://github.com/username/repo"
+        required
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="field">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+
+</body>
+</html>
