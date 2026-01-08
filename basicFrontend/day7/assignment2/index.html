@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hartford India Insurance</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- 1) Header & Navigation (Flexbox + Sticky bonus) -->
+  <header class="site-header" id="home">
+  <div class="container header-inner">
+    <a href="#home" class="logo-link" aria-label="Hartford India Home">
+      <img src="/images/hartfordLogo.png" alt="Hartford India Logo" class="logo-img">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#plans">Plans</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <!-- 2) Hero Section (Centered vertically & horizontally, gradient background) -->
+    <section class="hero" aria-label="Hero section">
+  <div class="container hero-content hero-split">
+    <div class="hero-text">
+      <h1>Protecting Your Life &amp; Future</h1>
+      <p>
+        Secure what matters most with trusted insurance plans built for your family,
+        health, vehicles, and home — backed by experience and fast claim support.
+      </p>
+      <a class="btn btn-primary" href="#plans">View Plans</a>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img src="/images/hartford.jpeg" alt="Hero illustration" class="hero-image" />
+    </div>
+  </div>
+</section>
+
+    <!-- 3) Insurance Plans Section (4 cards with images, equal height, hover) -->
+    <section class="section" id="plans" aria-label="Insurance plans">
+      <div class="container">
+        <div class="section-head">
+          <h2>Insurance Plans</h2>
+          <p>Choose a plan that matches your needs and get protected today.</p>
+        </div>
+
+        <div class="cards">
+          <!-- Card 1 -->
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=60"
+              alt="Life insurance concept"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Life Insurance</h3>
+              <p>Financial protection for your family with flexible coverage options.</p>
+              <a class="btn btn-outline" href="#contact">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?auto=format&fit=crop&w=1200&q=60"
+              alt="Health insurance concept"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Health Insurance</h3>
+              <p>Medical coverage for hospitalization, emergencies, and wellness care.</p>
+              <a class="btn btn-outline" href="#contact">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=60"
+              alt="Vehicle insurance concept"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Vehicle Insurance</h3>
+              <p>Car &amp; bike protection with fast claims and cashless repair support.</p>
+              <a class="btn btn-outline" href="#contact">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=60"
+              alt="Home insurance concept"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Home Insurance</h3>
+              <p>Secure your property against damage, theft, and unexpected events.</p>
+              <a class="btn btn-outline" href="#contact">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Why Choose Us (3 feature boxes, flexbox, icons allowed) -->
+    <section class="section section-soft" aria-label="Why choose us">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Choose Us</h2>
+          <p>Trust, transparency, and support — built over decades.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">🏆</div>
+            <h3>25+ Years Experience</h3>
+            <p>Decades of expertise delivering reliable insurance protection.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <h3>Trusted by 1M+ Customers</h3>
+            <p>Chosen by families across India for consistent service.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">📞</div>
+            <h3>24×7 Claim Support</h3>
+            <p>Round-the-clock assistance when you need it most.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) About (2-column layout: left image, right text; stack on mobile) -->
+    <section class="section" id="about" aria-label="About Hartford India Insurance">
+      <div class="container about-grid">
+        <div class="about-media">
+          <img
+            src="/images/hartfordPink.png"
+            alt="Professional insurance team"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about-text">
+          <h2>About Hartford India Insurance</h2>
+          <p>
+            Hartford India Insurance has been serving customers with trust and transparency
+            for over 25 years. We focus on simple, clear plans and dependable claim support.
+          </p>
+          <ul class="tick-list">
+            <li>Simple plan selection and guidance</li>
+            <li>Transparent policy terms</li>
+            <li>Fast, friendly customer support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Statistics (4 equal width boxes, centered, light background) -->
+    <section class="section section-soft" aria-label="Company statistics">
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">1M+</div>
+            <div class="stat-label">Customers</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Branches</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Claim Settlement</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) Contact / Insurance Enquiry Form (full width inputs, labels, spacing) -->
+    <section class="section" id="contact" aria-label="Contact form">
+      <div class="container">
+        <div class="section-head">
+          <h2>Insurance Enquiry</h2>
+          <p>Fill the form and our team will get back to you shortly.</p>
+        </div>
+
+        <form class="form" action="#" method="post">
+          <div class="form-row">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+              inputmode="numeric"
+              pattern="[0-9]{10}"
+              title="Enter a 10-digit phone number"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="insuranceType">Insurance Type</label>
+            <select id="insuranceType" name="insuranceType" required>
+              <option value="" selected disabled>Choose a type</option>
+              <option value="life">Life Insurance</option>
+              <option value="health">Health Insurance</option>
+              <option value="vehicle">Vehicle Insurance</option>
+              <option value="home">Home Insurance</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8) Footer (dark background, copyright + disclaimer) -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© <span id="year">2026</span> Hartford India Insurance. All rights reserved.</p>
+     <p class="footer-disclaimer">
+  Disclaimer: This is a mock website developed as part of a training assignment. Any plans, benefits, and figures displayed are purely illustrative and should not be considered official or legally binding.
+</p>
+    </div>
+  </footer>
+</body>
+</html>
