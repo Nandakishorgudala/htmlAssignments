@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desserts Grid</title>
+  <style>
+    * { box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#faf7f4;
+      color:#222;
+    }
+
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1{
+      margin: 0 0 16px;
+      font-size: 28px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card{
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    }
+
+    .img-wrap{
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: #eee;
+    }
+    .img-wrap img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .add-btn{
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(0,0,0,0.15);
+      background: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+    .add-btn:hover{ background: #fff6ee; }
+
+    .card-body{ padding: 12px 14px 14px; }
+
+    .title{
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+    .subtitle{
+      font-size: 12px;
+      color: #666;
+      margin: 0 0 10px;
+    }
+    .price{
+      font-size: 14px;
+      font-weight: 800;
+      color: #c2410c;
+      margin: 0;
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px){
+      .grid{ grid-template-columns: 1fr; }
+      .page{ padding: 14px; }
+      h1{ font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Food Love</h1>
+
+    <div class="grid">
+      <!-- 1: biryani -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="/images/biryani.jpeg" alt="Biryani">
+          <button class="add-btn">🛒 Add to Cart</button>
+        </div>
+        <div class="card-body">
+          <p class="title">Chicken Biryani</p>
+          <p class="subtitle">Aromatic rice • Spiced chicken</p>
+          <p class="price">$9.50</p>
+        </div>
+      </div>
+
+      <!-- 2: brownie -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="/images/brownie.jpeg" alt="Brownie">
+          <button class="add-btn">🛒 Add to Cart</button>
+        </div>
+        <div class="card-body">
+          <p class="title">Chocolate Brownie</p>
+          <p class="subtitle">Fudgy center • Rich cocoa</p>
+          <p class="price">$4.00</p>
+        </div>
+      </div>
+
+      <!-- 3: tres leches -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="/images/tresLeeches.jpeg" alt="Tres Leches Cake">
+          <button class="add-btn">🛒 Add to Cart</button>
+        </div>
+        <div class="card-body">
+          <p class="title">Tres Leches Cake</p>
+          <p class="subtitle">Milk-soaked cake • Soft & creamy</p>
+          <p class="price">$6.75</p>
+        </div>
+      </div>
+
+      <!-- 4: french fries -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="/images/frenchFries.jpeg" alt="French Fries">
+          <button class="add-btn">🛒 Add to Cart</button>
+        </div>
+        <div class="card-body">
+          <p class="title">French Fries</p>
+          <p class="subtitle">Crispy fries • Lightly salted</p>
+          <p class="price">$3.50</p>
+        </div>
+      </div>
+
+      <!-- 5: pani puri -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="/images/panipuri.jpeg" alt="Pani Puri">
+          <button class="add-btn">🛒 Add to Cart</button>
+        </div>
+        <div class="card-body">
+          <p class="title">Pani Puri</p>
+          <p class="subtitle">Crisp puris • Tangy spicy water</p>
+          <p class="price">$5.00</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

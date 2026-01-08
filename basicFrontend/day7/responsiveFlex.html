@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox Properties Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 18px;
+      background: #f4f7ff;
+      color: #1f2a44;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      color: #0b2a6f;
+    }
+
+    .note {
+      margin: 0 0 18px;
+      color: #3a4b6b;
+    }
+
+    .demo {
+      background: #ffffff;
+      border: 1px solid #dfe7ff;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(20, 40, 90, 0.08);
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #102a5a;
+    }
+
+    .flex {
+      display: flex;
+      border: 2px dashed #7b9bff;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f7f9ff, #eef3ff);
+      min-height: 70px;
+    }
+
+    .item {
+      width: 95px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #0b1d3a;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      user-select: none;
+    }
+
+    /* Different colors for items */
+    .c1 { background: #dbeafe; }  /* light blue */
+    .c2 { background: #dcfce7; }  /* light green */
+    .c3 { background: #fae8ff; }  /* light purple */
+    .c4 { background: #ffedd5; }  /* light orange */
+    .c5 { background: #ffe4e6; }  /* light pink */
+    .c6 { background: #e0f2fe; }  /* sky */
+
+    .tall { height: 80px; }
+    .short { height: 30px; }
+
+    /* Flex utilities */
+    .row { flex-direction: row; }
+    .column { flex-direction: column; }
+
+    .nowrap { flex-wrap: nowrap; }
+    .wrap { flex-wrap: wrap; }
+    .wrap-reverse { flex-wrap: wrap-reverse; }
+
+    .gap-12 { gap: 12px; }
+
+    .jc-between { justify-content: space-between; }
+    .jc-around { justify-content: space-around; }
+    .jc-evenly { justify-content: space-evenly; }
+    .jc-center { justify-content: center; }
+
+    .ai-start { align-items: flex-start; }
+    .ai-center { align-items: center; }
+    .ai-end { align-items: flex-end; }
+
+    .ac-between { align-content: space-between; }
+
+    /* Item properties */
+    .grow { flex-grow: 1; }
+    .order-last { order: 99; }
+    .self-end { align-self: flex-end; }
+
+    @media (max-width: 600px) {
+      .item { width: 85px; }
+      body { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox Properties Demo</h1>
+  <!-- <p class="note">Neat look + shows wrap, gap, justify-content, align-items, align-content and item properties.</p> -->
+
+  <!-- flex-direction -->
+  <div class="demo">
+    <div class="label">1) flex-direction: row</div>
+    <div class="flex row gap-12">
+      <div class="item c1">The</div>
+      <div class="item c2">Hartford</div>
+      <div class="item c3">Java</div>
+      <div class="item c4">.Net</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="label">flex-direction: column</div>
+    <div class="flex column gap-12">
+      <div class="item c1">Frontend</div>
+      <div class="item c2">Backend</div>
+      <div class="item c3">Agentic AI</div>
+    </div>
+  </div>
+
+  <!-- flex-wrap -->
+  <div class="demo">
+    <div class="label">2) flex-wrap: wrap (items wrap to next line)</div>
+    <div class="flex row wrap gap-12">
+      <div class="item c1">Frontend</div>
+      <div class="item c2">Backend</div>
+      <div class="item c3">Agentic</div>
+      <div class="item c4">AI</div>
+      <div class="item c5">Java</div>
+      <div class="item c6">.Net</div>
+    </div>
+  </div>
+
+  <!-- justify-content -->
+  <div class="demo">
+    <div class="label">3) justify-content: space-between</div>
+    <div class="flex row jc-between gap-12">
+      <div class="item c1">The</div>
+      <div class="item c2">Hartford</div>
+      <div class="item c3">Backend</div>
+      <div class="item c4">AI</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="label">justify-content: space-around</div>
+    <div class="flex row jc-around gap-12">
+      <div class="item c5">Java</div>
+      <div class="item c6">.Net</div>
+      <div class="item c2">Frontend</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="label">justify-content: space-evenly</div>
+    <div class="flex row jc-evenly gap-12">
+      <div class="item c1">Java</div>
+      <div class="item c3">.Net</div>
+      <div class="item c4">AI</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="label">justify-content: center</div>
+    <div class="flex row jc-center gap-12">
+      <div class="item c2">Frontend</div>
+      <div class="item c3">Backend</div>
+    </div>
+  </div>
+
+  <!-- align-items -->
+  <div class="demo">
+    <div class="label">4) align-items: flex-start / center / flex-end</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="label" style="font-weight:600; margin-bottom:6px;">align-items: flex-start</div>
+      <div class="flex row ai-start gap-12" style="height: 120px;">
+        <div class="item c1 tall">The</div>
+        <div class="item c2">Hartford</div>
+        <div class="item c3 short">Java</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:10px;">
+      <div class="label" style="font-weight:600; margin-bottom:6px;">align-items: center</div>
+      <div class="flex row ai-center gap-12" style="height: 120px;">
+        <div class="item c4 tall">Frontend</div>
+        <div class="item c5">Backend</div>
+        <div class="item c6 short">AI</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="label" style="font-weight:600; margin-bottom:6px;">align-items: flex-end</div>
+      <div class="flex row ai-end gap-12" style="height: 120px;">
+        <div class="item c2 tall">Java</div>
+        <div class="item c3">.Net</div>
+        <div class="item c1 short">AI</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- align-content -->
+  <div class="demo">
+    <div class="label">5) align-content: space-between (needs wrap + multiple lines)</div>
+    <div class="flex row wrap gap-12 ac-between" style="height: 190px;">
+      <div class="item c1">The</div>
+      <div class="item c2">Hartford</div>
+      <div class="item c3">Frontend</div>
+      <div class="item c4">Backend</div>
+      <div class="item c5">Agentic</div>
+      <div class="item c6">AI</div>
+      <div class="item c2">Java</div>
+      <div class="item c3">.Net</div>
+    </div>
+  </div>
+
+  <!-- item properties -->
+  <div class="demo">
+    <div class="label">6) Item properties: flex-grow / order / align-self</div>
+
+    <div class="label" style="font-weight:600;">flex-grow: middle expands</div>
+    <div class="flex row gap-12" style="margin: 8px 0 14px;">
+      <div class="item c1">Java</div>
+      <div class="item c2 grow">Backend (grow)</div>
+      <div class="item c3">.Net</div>
+    </div>
+
+    <div class="label" style="font-weight:600;">order: move one item to the end</div>
+    <div class="flex row gap-12" style="margin: 8px 0 14px;">
+      <div class="item c4">Frontend</div>
+      <div class="item c5 order-last">The Hartford</div>
+      <div class="item c6">Backend</div>
+      <div class="item c2">Agentic AI</div>
+    </div>
+
+    <div class="label" style="font-weight:600;">align-self: one item overrides align-items</div>
+    <div class="flex row ai-center gap-12" style="height: 130px; margin-top: 8px;">
+      <div class="item c1">Java</div>
+      <div class="item c3 self-end">AI (self-end)</div>
+      <div class="item c2">.Net</div>
+    </div>
+  </div>
+</body>
+</html>
