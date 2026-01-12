@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insurance Customer Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Header / Landing -->
+  <header class="bg-white border-b">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-bold">Hartford Insurance</h1>
+        <p class="text-sm text-slate-600">Simple plans. Smarter protection.</p>
+      </div>
+      <a href="#enquiry" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">Submit Enquiry</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-8">
+    <!-- Stats cards -->
+    <section class="grid gap-4 sm:grid-cols-3">
+      <div class="bg-white rounded-2xl shadow p-4">
+        <p class="text-sm text-slate-500">Customers</p>
+        <p id="statCustomers" class="text-2xl font-bold">0</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <p class="text-sm text-slate-500">Policies (plans shown)</p>
+        <p id="statPolicies" class="text-2xl font-bold">3</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <p class="text-sm text-slate-500">Total Premium Value</p>
+        <p id="statPremium" class="text-2xl font-bold">₹0</p>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section>
+      <div class="flex items-end justify-between gap-3 flex-wrap">
+        <div>
+          <h2 class="text-lg font-bold">Insurance Plans</h2>
+          <p class="text-sm text-slate-600">Choose a plan and enroll quickly.</p>
+        </div>
+      </div>
+
+      <div id="plansGrid" class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- Enquiry + Table -->
+    <section id="enquiry" class="grid gap-6 lg:grid-cols-2">
+      <!-- Form -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h3 class="text-lg font-bold">Customer Enquiry Form</h3>
+        <p class="text-sm text-slate-600">Add a customer enquiry to the dashboard.</p>
+
+        <div id="formSuccess" class="hidden mt-3 p-3 rounded-xl border border-green-300 bg-green-50 text-green-700 text-sm">
+          Customer added successfully.
+        </div>
+
+        <form id="customerForm" class="mt-4 space-y-3" novalidate>
+          <div>
+            <label class="text-sm font-medium">Customer Name</label>
+            <input id="name" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+            <p id="err_name" class="text-xs text-red-600 mt-1 min-h-[16px]"></p>
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Age</label>
+            <input id="age" type="number" min="1" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+            <p id="err_age" class="text-xs text-red-600 mt-1 min-h-[16px]"></p>
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Email</label>
+            <input id="email" type="email" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+            <p id="err_email" class="text-xs text-red-600 mt-1 min-h-[16px]"></p>
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Policy Type</label>
+            <select id="policyType" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200">
+              <option value="">-- Select --</option>
+              <option value="Health">Health</option>
+              <option value="Life">Life</option>
+              <option value="Vehicle">Vehicle</option>
+            </select>
+            <p id="err_policyType" class="text-xs text-red-600 mt-1 min-h-[16px]"></p>
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Coverage Amount (in Lakhs)</label>
+            <div class="flex items-center gap-3">
+              <input id="coverage" type="range" min="1" max="10" value="1" class="w-full" />
+              <span id="coverageLabel" class="text-sm font-semibold w-12 text-right">1L</span>
+            </div>
+            <p id="err_coverage" class="text-xs text-red-600 mt-1 min-h-[16px]"></p>
+          </div>
+
+          <button class="w-full rounded-xl bg-blue-600 text-white py-2 hover:bg-blue-700">
+            Submit
+          </button>
+        </form>
+      </article>
+
+      <!-- Table + Filter/Search -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <div class="flex flex-wrap gap-3 items-center justify-between">
+          <div>
+            <h3 class="text-lg font-bold">Customer List</h3>
+            <p class="text-sm text-slate-600">Added via the enquiry form.</p>
+          </div>
+
+          <div class="flex gap-2 flex-wrap">
+            <select id="filterPolicy" class="rounded-xl border px-3 py-2 text-sm">
+              <option value="All">All Policies</option>
+              <option value="Health">Health</option>
+              <option value="Life">Life</option>
+              <option value="Vehicle">Vehicle</option>
+            </select>
+
+            <input id="searchName" placeholder="Search name..." class="rounded-xl border px-3 py-2 text-sm"/>
+          </div>
+        </div>
+
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="text-left text-slate-500 border-b">
+              <tr>
+                <th class="py-2 pr-2">Name</th>
+                <th class="py-2 pr-2">Age</th>
+                <th class="py-2 pr-2">Policy</th>
+                <th class="py-2 pr-2">Coverage</th>
+                <th class="py-2 pr-2">Estimated Premium</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <p id="emptyState" class="text-slate-500 text-sm mt-3">No customers yet.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    // ---------- Plans (render using map) ----------
+    const plans = [
+      { policyType: "Health", planName: "Health Secure", basePremium: 3000, coverage: "Up to 10L" },
+      { policyType: "Life",   planName: "Life Protect",  basePremium: 5000, coverage: "Up to 10L" },
+      { policyType: "Vehicle",planName: "Vehicle Shield",basePremium: 2000, coverage: "Up to 10L" },
+    ];
+
+    const plansGrid = document.getElementById("plansGrid");
+    plansGrid.innerHTML = plans.map(p => `
+      <div class="bg-white rounded-2xl shadow p-4 flex flex-col justify-between">
+        <div>
+          <span class="inline-block text-xs px-2 py-1 rounded-full bg-slate-100">${p.policyType}</span>
+          <h3 class="mt-2 font-bold">${p.planName}</h3>
+          <p class="text-sm text-slate-600 mt-1">Base Premium: <b>₹${p.basePremium}</b></p>
+          <p class="text-sm text-slate-600">Coverage: <b>${p.coverage}</b></p>
+        </div>
+        <button
+          class="mt-4 rounded-xl border px-3 py-2 hover:bg-slate-50"
+          onclick="scrollToForm('${p.policyType}')"
+        >
+          Enroll
+        </button>
+      </div>
+    `).join("");
+
+    function scrollToForm(policyType){
+      document.getElementById("policyType").value = policyType;
+      document.getElementById("enquiry").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // ---------- Customer Module ----------
+    let customers = []; // array of customer objects
+
+    const form = document.getElementById("customerForm");
+    const formSuccess = document.getElementById("formSuccess");
+
+    const coverageInput = document.getElementById("coverage");
+    const coverageLabel = document.getElementById("coverageLabel");
+
+    coverageInput.addEventListener("input", () => {
+      coverageLabel.innerText = `${coverageInput.value}L`;
+    });
+
+    function setErr(id, msg){ document.getElementById(id).innerText = msg; }
+    function clearErrs(){
+      ["err_name","err_age","err_email","err_policyType","err_coverage"].forEach(x => setErr(x,""));
+    }
+
+    // Premium rules (as per PDF): base by policy, +20% if age>45, +₹500 per additional 1L coverage
+    function calculatePremium(age, policyType, coverageLakhs){
+      const baseMap = { Health: 3000, Life: 5000, Vehicle: 2000 };
+      let premium = baseMap[policyType] || 0;
+
+      if (age > 45) premium = premium * 1.2;
+
+      const extraLakhs = Math.max(0, coverageLakhs - 1);
+      premium += extraLakhs * 500;
+
+      return Math.round(premium);
+    }
+
+    function render(){
+      const filterPolicy = document.getElementById("filterPolicy").value;
+      const searchName = document.getElementById("searchName").value.trim().toLowerCase();
+
+      let filtered = customers;
+
+      // filter() by policy
+      if (filterPolicy !== "All"){
+        filtered = filtered.filter(c => c.policyType === filterPolicy);
+      }
+
+      // search by name (case-insensitive)
+      if (searchName){
+        filtered = filtered.filter(c => c.name.toLowerCase().includes(searchName));
+      }
+
+      // render rows using map()
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = filtered.map(c => `
+        <tr class="border-b">
+          <td class="py-2 pr-2">${c.name}</td>
+          <td class="py-2 pr-2">${c.age}</td>
+          <td class="py-2 pr-2">${c.policyType}</td>
+          <td class="py-2 pr-2">${c.coverage}L</td>
+          <td class="py-2 pr-2 font-semibold">₹${c.premium}</td>
+        </tr>
+      `).join("");
+
+      document.getElementById("emptyState").style.display = filtered.length ? "none" : "block";
+
+      // summary using reduce()
+      document.getElementById("statCustomers").innerText = customers.length;
+      const totalPremium = customers.reduce((sum, c) => sum + c.premium, 0);
+      document.getElementById("statPremium").innerText = `₹${totalPremium}`;
+    }
+
+    document.getElementById("filterPolicy").addEventListener("change", render);
+    document.getElementById("searchName").addEventListener("input", render);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      clearErrs();
+      formSuccess.classList.add("hidden");
+
+      const name = document.getElementById("name").value.trim();
+      const age = Number(document.getElementById("age").value);
+      const email = document.getElementById("email").value.trim();
+      const policyType = document.getElementById("policyType").value;
+      const coverageLakhs = Number(document.getElementById("coverage").value);
+
+      let ok = true;
+
+      if (!name){ setErr("err_name","Name is required."); ok = false; }
+      if (!age || age < 1){ setErr("err_age","Valid age is required."); ok = false; }
+      if (!email){ setErr("err_email","Email is required."); ok = false; }
+      if (!policyType){ setErr("err_policyType","Select a policy type."); ok = false; }
+      if (!coverageLakhs){ setErr("err_coverage","Select coverage."); ok = false; }
+
+      if (!ok) return;
+
+      const premium = calculatePremium(age, policyType, coverageLakhs);
+
+      const customer = {
+        id: Date.now(),
+        name,
+        age,
+        policyType,
+        coverage: coverageLakhs,
+        premium
+      };
+
+      customers.push(customer);
+      render();
+
+      form.reset();
+      coverageInput.value = 1;
+      coverageLabel.innerText = "1L";
+      formSuccess.classList.remove("hidden");
+    });
+
+    render();
+  </script>
+</body>
+</html>
