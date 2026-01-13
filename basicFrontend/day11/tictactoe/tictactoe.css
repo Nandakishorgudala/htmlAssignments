@@ -1,0 +1,85 @@
+ 
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6ff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 360px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      padding: 18px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+
+    #status {
+      margin: 10px 0 14px;
+      font-size: 14px;
+      color: #333;
+      min-height: 20px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 10px 0 16px;
+    }
+
+    .cell {
+      height: 95px;
+      border-radius: 12px;
+      border: 2px solid #cfd6e4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 44px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #fafbff;
+      transition: 0.15s;
+      user-select: none;
+    }
+
+    .cell:hover {
+      background: #eef3ff;
+      transform: translateY(-1px);
+    }
+
+    .cell.disabled {
+      cursor: not-allowed;
+      opacity: 0.85;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      padding: 11px 12px;
+      border-radius: 10px;
+      background: #1e63ff;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #174fe0;
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+    }
+ 
