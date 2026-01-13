@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claims Dashboard - Capture + Bubble + stopPropagation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h2 class="title">Insurance Claims Dashboard</h2>
+
+  <div class="claims" id="claimsBoard">
+    <div class="claimRow" data-claim-id="CLM101">
+      <div class="claimInfo">
+        <h3>Claim ID: CLM101</h3>
+        <p>Type: Vehicle Damage</p>
+      </div>
+      <button class="approveBtn">Approve Claim</button>
+    </div>
+
+    <div class="claimRow" data-claim-id="CLM102">
+      <div class="claimInfo">
+        <h3>Claim ID: CLM102</h3>
+        <p>Type: Health Insurance</p>
+      </div>
+      <button class="approveBtn">Approve Claim</button>
+    </div>
+  </div>
+
+  <div id="log"><b>Logs:</b><br></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

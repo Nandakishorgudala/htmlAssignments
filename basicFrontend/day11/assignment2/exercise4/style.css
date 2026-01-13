@@ -1,0 +1,42 @@
+body { font-family: Arial, sans-serif; }
+
+.title {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.claims {
+  width: 560px;
+  margin: 20px auto;
+  display: grid;
+  gap: 14px;
+  border: 2px dashed #999;
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.claimRow {
+  border: 2px solid #333;
+  padding: 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.claimRow:hover { background: #f2f2f2; }
+
+.approveBtn {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+#log {
+  width: 560px;
+  margin: 18px auto;
+  border: 1px dashed #999;
+  padding: 10px;
+  font-family: monospace;
+  min-height: 110px;
+}

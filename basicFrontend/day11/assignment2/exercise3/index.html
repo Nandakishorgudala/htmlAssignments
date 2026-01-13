@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Dashboard - stopPropagation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h2 class="title">Insurance Dashboard</h2>
+
+  <div class="dashboard">
+    <!-- Policy Card -->
+    <div class="policy-card" data-policy-id="POL123">
+      <div class="policy-info">
+        <h3>Policy: POL123</h3>
+        <p>Plan: Health Secure</p>
+      </div>
+      <button class="delete-btn">Delete</button>
+    </div>
+
+    <!-- Another Policy Card -->
+    <div class="policy-card" data-policy-id="POL456">
+      <div class="policy-info">
+        <h3>Policy: POL456</h3>
+        <p>Plan: Term Life Plus</p>
+      </div>
+      <button class="delete-btn">Delete</button>
+    </div>
+  </div>
+
+  <div id="log"><b>Logs:</b><br></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

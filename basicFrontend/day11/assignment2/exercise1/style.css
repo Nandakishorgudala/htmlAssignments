@@ -1,0 +1,22 @@
+#paymentSection {
+  border: 2px solid #333;
+  padding: 20px;
+  width: 320px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#payBtn {
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#log {
+  width: 320px;
+  margin: 15px auto;
+  border: 1px dashed #999;
+  padding: 10px;
+  font-family: monospace;
+  min-height: 60px;
+}
