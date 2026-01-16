@@ -1,0 +1,80 @@
+* { box-sizing: border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #0b1220; color: #e8eefc; }
+
+.topbar { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); }
+.topbar h1 { margin: 0 0 6px; font-size: 22px; }
+.muted { color: rgba(232,238,252,0.7); margin: 0; }
+.small { font-size: 13px; }
+
+.container { max-width: 1100px; margin: 18px auto; padding: 0 16px 40px; display: grid; gap: 14px; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; }
+
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.grow { flex: 1; min-width: 220px; }
+
+.label { font-size: 12px; color: rgba(232,238,252,0.75); }
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.btn {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: #e8eefc;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover { background: rgba(255,255,255,0.09); }
+.btn.primary { background: #3b82f6; border-color: #3b82f6; color: white; }
+.btn.primary:hover { filter: brightness(1.05); }
+
+.input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25);
+  color: #e8eefc;
+  outline: none;
+}
+
+hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 14px 0; }
+
+.stat {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-weight: 700;
+}
+
+.status {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  min-height: 42px;
+}
+
+.grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.policy {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 12px;
+}
+.policy h3 { margin: 0 0 8px; font-size: 16px; }
+.badge { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+.badge.active { background: rgba(34,197,94,0.2); border: 1px solid rgba(34,197,94,0.45); }
+.badge.inactive { background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.45); }
+
+.meta { display: grid; gap: 6px; margin-top: 10px; color: rgba(232,238,252,0.85); }
+.meta div { display: flex; justify-content: space-between; gap: 10px; }
+.meta span { color: rgba(232,238,252,0.65); }
+
+.footer { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; }

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insurance Mini Project</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Insurance Portal</h1>
+    <p class="muted">Fetch • Display • Filter • Premium calc • Discount • Approval • Promise • Errors</p>
+  </header>
+
+  <main class="container">
+    <!-- Controls -->
+    <section class="card">
+      <div class="row">
+        <div class="group">
+          <label class="label">Filter by Type</label>
+          <div class="btn-row">
+            <button class="btn" data-filter="All">All</button>
+            <button class="btn" data-filter="Health">Health</button>
+            <button class="btn" data-filter="Life">Life</button>
+            <button class="btn" data-filter="Vehicle">Vehicle</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <label class="label">Actions</label>
+          <div class="btn-row">
+            <button class="btn primary" id="btnFetch">Fetch Policies</button>
+            <button class="btn" id="btnDiscount">Apply 10% Discount (> ₹10,000)</button>
+          </div>
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class="row">
+        <div class="group grow">
+          <label class="label">Total Premium (Active Policies)</label>
+          <div class="stat" id="totalPremium">₹0</div>
+        </div>
+
+        <div class="group grow">
+          <label class="label">Messages</label>
+          <div class="status" id="statusBox">Ready.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Purchase / Approval -->
+    <section class="card">
+      <h2>Purchase / Approval</h2>
+      <div class="row">
+        <div class="group grow">
+          <label class="label" for="policyIdInput">Enter Policy ID</label>
+          <input id="policyIdInput" class="input" type="number" placeholder="e.g. 1" />
+        </div>
+
+        <div class="group">
+          <label class="label">Callback Approval</label>
+          <button class="btn" id="btnApproveCb">Approve (2s delay)</button>
+        </div>
+
+        <div class="group">
+          <label class="label">Promise Purchase</label>
+          <button class="btn primary" id="btnPurchasePromise">Purchase (Promise)</button>
+        </div>
+      </div>
+
+      <p class="muted small">
+        Callback approval simulates approval after 2 seconds. Promise purchase converts that logic to Promise and handles success/failure.
+      </p>
+    </section>
+
+    <!-- Policies -->
+    <section class="card">
+      <h2>Policies</h2>
+      <div id="policiesGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="muted small">Training assignment demo — Insurance Mini-Project.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
