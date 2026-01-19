@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Banking Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🏦 Online Banking Operations Dashboard</h1>
+  <p>Secure • Reliable • Real-Time Banking</p>
+</header>
+
+<div id="loader" class="loader">Loading accounts...</div>
+
+<section class="controls">
+  <input type="text" id="searchInput" placeholder="🔍 Search by name">
+  <select id="branchFilter">
+    <option value="">🏙 All Branches</option>
+  </select>
+<button onclick="sortByBalance()">⬇ Sort / Reset</button>
+</section>
+
+<section class="summary">
+  <h3>Total Bank Balance: ₹ <span id="totalBalance">0</span></h3>
+</section>
+
+<section class="table-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Acc No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Branch</th>
+        <th>Balance</th>
+        <th>Actions</th>
+        <th>Transactions</th>
+      </tr>
+    </thead>
+    <tbody id="accountTable"></tbody>
+  </table>
+</section>
+
+<section class="form-section">
+  <h2>Create New Account</h2>
+  <form id="accountForm">
+    <input required id="name" placeholder="Account Holder Name">
+    <input required id="email" placeholder="Email">
+    <input required id="branch" placeholder="Branch (City)">
+    <button type="submit">➕ Add Account</button>
+  </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
